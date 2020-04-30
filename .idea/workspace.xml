@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="983ff895-7c15-41b8-84b2-274f9f06e002" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="/usr/local/go" />
+  <component name="GoLibraries">
+    <option name="indexEntireGoPath" value="false" />
+  </component>
+  <component name="ProjectId" id="1ayGqkyvzsAvXVgkdeGb285EYTx" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/core/accounts" />
+      <recent name="$PROJECT_DIR$/brun/test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.go build resk/brun">
+    <configuration name="go build resk/brun" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="resk" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <filePath value="$PROJECT_DIR$/brun/main.go" />
+      <package value="resk/brun" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build resk/example (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="resk" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/example/sig.go" />
+      <package value="resk/example" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build resk/example (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="resk" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/example/a..go" />
+      <package value="resk/example" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build resk/example" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="resk" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/example/rpc_client.go" />
+      <package value="resk/example" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TestRedEnvelopeService_Receive in resk/core/envelopes" type="GoTestRunConfiguration" factoryName="Go Test" temporary="true" nameIsGenerated="true">
+      <module name="resk" />
+      <working_directory value="$PROJECT_DIR$/core/envelopes" />
+      <framework value="gotest" />
+      <kind value="PACKAGE" />
+      <package value="resk/core/envelopes" />
+      <directory value="$PROJECT_DIR$/" />
+      <filePath value="$PROJECT_DIR$/" />
+      <pattern value="^TestRedEnvelopeService_Receive$" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build resk/brun" />
+        <item itemvalue="Go Build.go build resk/example (2)" />
+        <item itemvalue="Go Build.go build resk/example (1)" />
+        <item itemvalue="Go Test.TestRedEnvelopeService_Receive in resk/core/envelopes" />
+        <item itemvalue="Go Build.go build resk/example" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VgoProject">
+    <integration-enabled>true</integration-enabled>
+    <proxy>https://goproxy.io,direct</proxy>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="188" y="75" key="#BenchmarkUpdateForUnsigned_in_resk/infra/test" timestamp="1587726438472">
+      <screen x="35" y="23" width="1405" height="877" />
+    </state>
+    <state x="188" y="75" key="#BenchmarkUpdateForUnsigned_in_resk/infra/test/35.23.1405.877@35.23.1405.877" timestamp="1587726438472" />
+    <state x="446" y="102" key="#TestAccountService_Transfer_in_resk/core/accounts" timestamp="1588036756505">
+      <screen x="34" y="23" width="1406" height="877" />
+    </state>
+    <state x="446" y="102" key="#TestAccountService_Transfer_in_resk/core/accounts/34.23.1406.877@34.23.1406.877" timestamp="1588036756505" />
+    <state x="454" y="271" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1587957825174">
+      <screen x="35" y="23" width="1405" height="877" />
+    </state>
+    <state x="454" y="271" key="#com.intellij.fileTypes.FileTypeChooser/35.23.1405.877@35.23.1405.877" timestamp="1587957825174" />
+    <state x="445" y="104" key="#go_build_resk/example" timestamp="1588124909777">
+      <screen x="33" y="23" width="1407" height="877" />
+    </state>
+    <state x="445" y="104" key="#go_build_resk/example/33.23.1407.877@33.23.1407.877" timestamp="1588124909777" />
+    <state x="446" y="104" key="#go_build_resk/example/35.23.1405.877@35.23.1405.877" timestamp="1587897089828" />
+    <state x="445" y="104" key="#go_build_resk/example_(1)" timestamp="1588209842004">
+      <screen x="34" y="23" width="1406" height="877" />
+    </state>
+    <state x="445" y="104" key="#go_build_resk/example_(1)/34.23.1406.877@34.23.1406.877" timestamp="1588209842004" />
+    <state x="446" y="104" key="#go_build_resk/example_(1)/35.23.1405.877@35.23.1405.877" timestamp="1587897434916" />
+    <state x="446" y="104" key="#go_build_resk/example_(2)" timestamp="1588220564323">
+      <screen x="35" y="23" width="1405" height="877" />
+    </state>
+    <state x="446" y="104" key="#go_build_resk/example_(2)/35.23.1405.877@35.23.1405.877" timestamp="1588220564323" />
+    <state x="858" y="120" key="#go_build_resk/example_(3)" timestamp="1587894172484">
+      <screen x="35" y="23" width="1405" height="877" />
+    </state>
+    <state x="858" y="120" key="#go_build_resk/example_(3)/35.23.1405.877@35.23.1405.877" timestamp="1587894172484" />
+    <state x="446" y="104" key="#go_build_resk/example_(4)" timestamp="1587896381901">
+      <screen x="35" y="23" width="1405" height="877" />
+    </state>
+    <state x="446" y="104" key="#go_build_resk/example_(4)/35.23.1405.877@35.23.1405.877" timestamp="1587896381901" />
+    <state width="1363" height="442" key="GridCell.Tab.0.bottom" timestamp="1588243822241">
+      <screen x="35" y="23" width="1405" height="877" />
+    </state>
+    <state width="1364" height="533" key="GridCell.Tab.0.bottom/30.23.1410.877@30.23.1410.877" timestamp="1588045015910" />
+    <state width="1365" height="441" key="GridCell.Tab.0.bottom/33.23.1407.877@33.23.1407.877" timestamp="1588125169920" />
+    <state width="1363" height="441" key="GridCell.Tab.0.bottom/34.23.1406.877@34.23.1406.877" timestamp="1588210266392" />
+    <state width="1363" height="442" key="GridCell.Tab.0.bottom/35.23.1405.877@35.23.1405.877" timestamp="1588243822241" />
+    <state width="1363" height="442" key="GridCell.Tab.0.center" timestamp="1588243822240">
+      <screen x="35" y="23" width="1405" height="877" />
+    </state>
+    <state width="1364" height="533" key="GridCell.Tab.0.center/30.23.1410.877@30.23.1410.877" timestamp="1588045015909" />
+    <state width="1365" height="441" key="GridCell.Tab.0.center/33.23.1407.877@33.23.1407.877" timestamp="1588125169919" />
+    <state width="1363" height="441" key="GridCell.Tab.0.center/34.23.1406.877@34.23.1406.877" timestamp="1588210266392" />
+    <state width="1363" height="442" key="GridCell.Tab.0.center/35.23.1405.877@35.23.1405.877" timestamp="1588243822240" />
+    <state width="1363" height="442" key="GridCell.Tab.0.left" timestamp="1588243822240">
+      <screen x="35" y="23" width="1405" height="877" />
+    </state>
+    <state width="1364" height="533" key="GridCell.Tab.0.left/30.23.1410.877@30.23.1410.877" timestamp="1588045015909" />
+    <state width="1365" height="441" key="GridCell.Tab.0.left/33.23.1407.877@33.23.1407.877" timestamp="1588125169918" />
+    <state width="1363" height="441" key="GridCell.Tab.0.left/34.23.1406.877@34.23.1406.877" timestamp="1588210266391" />
+    <state width="1363" height="442" key="GridCell.Tab.0.left/35.23.1405.877@35.23.1405.877" timestamp="1588243822240" />
+    <state width="1363" height="442" key="GridCell.Tab.0.right" timestamp="1588243822241">
+      <screen x="35" y="23" width="1405" height="877" />
+    </state>
+    <state width="1364" height="533" key="GridCell.Tab.0.right/30.23.1410.877@30.23.1410.877" timestamp="1588045015910" />
+    <state width="1365" height="441" key="GridCell.Tab.0.right/33.23.1407.877@33.23.1407.877" timestamp="1588125169920" />
+    <state width="1363" height="441" key="GridCell.Tab.0.right/34.23.1406.877@34.23.1406.877" timestamp="1588210266392" />
+    <state width="1363" height="442" key="GridCell.Tab.0.right/35.23.1405.877@35.23.1405.877" timestamp="1588243822241" />
+    <state width="1364" height="469" key="GridCell.Tab.1.bottom" timestamp="1588073140419">
+      <screen x="34" y="23" width="1406" height="877" />
+    </state>
+    <state width="1364" height="469" key="GridCell.Tab.1.bottom/34.23.1406.877@34.23.1406.877" timestamp="1588073140419" />
+    <state width="1364" height="469" key="GridCell.Tab.1.center" timestamp="1588073140418">
+      <screen x="34" y="23" width="1406" height="877" />
+    </state>
+    <state width="1364" height="469" key="GridCell.Tab.1.center/34.23.1406.877@34.23.1406.877" timestamp="1588073140418" />
+    <state width="1364" height="469" key="GridCell.Tab.1.left" timestamp="1588073140417">
+      <screen x="34" y="23" width="1406" height="877" />
+    </state>
+    <state width="1364" height="469" key="GridCell.Tab.1.left/34.23.1406.877@34.23.1406.877" timestamp="1588073140417" />
+    <state width="1364" height="469" key="GridCell.Tab.1.right" timestamp="1588073140418">
+      <screen x="34" y="23" width="1406" height="877" />
+    </state>
+    <state width="1364" height="469" key="GridCell.Tab.1.right/34.23.1406.877@34.23.1406.877" timestamp="1588073140418" />
+    <state x="403" y="218" width="668" height="486" key="find.popup" timestamp="1588061667135">
+      <screen x="34" y="23" width="1406" height="877" />
+    </state>
+    <state x="403" y="218" width="668" height="486" key="find.popup/34.23.1406.877@34.23.1406.877" timestamp="1588061667135" />
+    <state x="404" y="218" width="667" height="486" key="find.popup/35.23.1405.877@35.23.1405.877" timestamp="1587892712764" />
+    <state x="402" y="213" width="670" height="676" key="search.everywhere.popup" timestamp="1587982222497">
+      <screen x="35" y="23" width="1405" height="877" />
+    </state>
+    <state x="402" y="213" width="670" height="676" key="search.everywhere.popup/35.23.1405.877@35.23.1405.877" timestamp="1587982222497" />
+    <state x="457" y="380" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1588242798166">
+      <screen x="35" y="23" width="1405" height="877" />
+    </state>
+    <state x="457" y="380" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/35.23.1405.877@35.23.1405.877" timestamp="1588242798166" />
+  </component>
+</project>
