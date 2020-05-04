@@ -7,7 +7,7 @@ import (
 	"github.com/sirupsen/logrus"
 	. "github.com/smartystreets/goconvey/convey"
 	"github.com/tietang/dbx"
-	"resk/infra/base"
+	"github.com/bairn/infra/base"
 	_ "resk/testx"
 	"testing"
 )

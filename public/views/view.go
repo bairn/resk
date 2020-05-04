@@ -3,8 +3,8 @@ package views
 import (
 	"github.com/kataras/iris"
 	"resk/core/users"
-	"resk/infra"
-	"resk/infra/base"
+	"github.com/bairn/infra"
+	"github.com/bairn/infra/base"
 	"path/filepath"
 	"runtime"
 )

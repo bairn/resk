@@ -4,8 +4,8 @@ import (
 	"github.com/tietang/props/ini"
 	"github.com/tietang/props/kvs"
 	_ "resk"
-	"resk/infra"
-	"resk/infra/base"
+	"github.com/bairn/infra"
+	"github.com/bairn/infra/base"
 )
 
 func main() {

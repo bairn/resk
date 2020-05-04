@@ -5,8 +5,8 @@ import (
 	_ "resk/apis/web"
 	_ "resk/core/accounts"
 	_ "resk/core/envelopes"
-	"resk/infra"
-	"resk/infra/base"
+	"github.com/bairn/infra"
+	"github.com/bairn/infra/base"
 	"resk/jobs"
 	_ "resk/public/ui"
 )

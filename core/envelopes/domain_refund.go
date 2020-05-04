@@ -6,7 +6,7 @@ import (
 	"fmt"
 	log "github.com/sirupsen/logrus"
 	"github.com/tietang/dbx"
-	"resk/infra/base"
+	"github.com/bairn/infra/base"
 	"resk/services"
 )
 

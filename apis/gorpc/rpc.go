@@ -1,8 +1,8 @@
 package gorpc
 
 import (
-	"resk/infra"
-	"resk/infra/base"
+	"github.com/bairn/infra"
+	"github.com/bairn/infra/base"
 )
 
 type GoRpcApiStarter struct {

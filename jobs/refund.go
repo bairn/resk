@@ -7,7 +7,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/tietang/go-utils"
 	"resk/core/envelopes"
-	"resk/infra"
+	"github.com/bairn/infra"
 	"time"
 )
 

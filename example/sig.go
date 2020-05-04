@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-	"os/signal"
 	"time"
 )
 
@@ -19,7 +18,7 @@ func main() {
 	}()
 
 	sigs := make(chan os.Signal)
-	signal.Notify(sigs)
+	//signal.Notify(sigs)
 	c := <-sigs
 	fmt.Println(c.String())
 	fmt.Println(server.Close())

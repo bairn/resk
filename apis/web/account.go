@@ -3,8 +3,8 @@ package web
 import (
 	"github.com/kataras/iris"
 	"github.com/sirupsen/logrus"
-	"resk/infra"
-	"resk/infra/base"
+	"github.com/bairn/infra"
+	"github.com/bairn/infra/base"
 	"resk/services"
 )
 

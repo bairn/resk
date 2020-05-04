@@ -4,7 +4,7 @@ import (
 	"context"
 	"github.com/segmentio/ksuid"
 	"github.com/tietang/dbx"
-	"resk/infra/base"
+	"github.com/bairn/infra/base"
 	"resk/services"
 )
 

@@ -4,8 +4,8 @@ import (
 	"github.com/kataras/iris"
 	"github.com/prometheus/common/log"
 	"path/filepath"
-	"resk/infra"
-	"resk/infra/base"
+	"github.com/bairn/infra"
+	"github.com/bairn/infra/base"
 	"runtime"
 	"strings"
 )
