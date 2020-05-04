@@ -1,4 +1,4 @@
-module resk
+module github.com/bairn/resk
 
 go 1.14
 

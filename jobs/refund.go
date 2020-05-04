@@ -2,12 +2,12 @@ package jobs
 
 import (
 	"fmt"
+	"github.com/bairn/infra"
+	"github.com/bairn/resk/core/envelopes"
 	"github.com/go-redsync/redsync"
 	"github.com/gomodule/redigo/redis"
 	log "github.com/sirupsen/logrus"
 	"github.com/tietang/go-utils"
-	"resk/core/envelopes"
-	"github.com/bairn/infra"
 	"time"
 )
 

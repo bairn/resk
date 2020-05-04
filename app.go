@@ -1,13 +1,12 @@
 package resk
 
 import (
-	"resk/apis/gorpc"
-	_ "resk/apis/web"
-	_ "resk/core/envelopes"
 	"github.com/bairn/infra"
 	"github.com/bairn/infra/base"
-	"resk/jobs"
-	_ "resk/public/ui"
+	"github.com/bairn/resk/apis/gorpc"
+	_ "github.com/bairn/resk/apis/web"
+	_ "github.com/bairn/resk/core/envelopes"
+	"github.com/bairn/resk/jobs"
 )
 
 func init() {

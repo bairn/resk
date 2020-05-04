@@ -1,6 +1,6 @@
 package gorpc
 
-import "resk/services"
+import "github.com/bairn/resk/services"
 
 type EnvelopeRpc struct {
 }

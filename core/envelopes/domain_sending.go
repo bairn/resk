@@ -5,9 +5,9 @@ import (
 	"github.com/bairn/account/core/accounts"
 	"github.com/bairn/account/services"
 	"github.com/bairn/infra/base"
+	envelopeServices "github.com/bairn/resk/services"
 	"github.com/tietang/dbx"
 	"path"
-	envelopeServices "resk/services"
 )
 
 //发红包业务领域代码
