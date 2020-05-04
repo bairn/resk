@@ -3,10 +3,11 @@ package envelopes
 import (
 	"context"
 	"errors"
+	"github.com/bairn/account/services"
+	"github.com/bairn/infra/base"
 	"github.com/shopspring/decimal"
 	log "github.com/sirupsen/logrus"
-	"github.com/bairn/infra/base"
-	"resk/services"
+	envelopeServices "resk/services"
 	"sync"
 )
 
@@ -14,7 +15,7 @@ var once sync.Once
 
 func init() {
 	once.Do(func() {
-		services.IRedEnvelopeService = new(redEnvelopeService)
+		envelopeServices.IRedEnvelopeService = new(redEnvelopeService)
 	})
 }
 
@@ -22,7 +23,7 @@ type redEnvelopeService struct {
 }
 
 //发红包
-func (r *redEnvelopeService) SendOut(dto services.RedEnvelopeSendingDTO) (activity *services.RedEnvelopeActivity, err error) {
+func (r *redEnvelopeService) SendOut(dto envelopeServices.RedEnvelopeSendingDTO) (activity *envelopeServices.RedEnvelopeActivity, err error) {
 	//验证
 	if err = base.ValidateStruct(&dto); err != nil {
 		return activity, err
@@ -36,9 +37,9 @@ func (r *redEnvelopeService) SendOut(dto services.RedEnvelopeSendingDTO) (activi
 	goods.AccountNo = account.AccountNo
 
 	if goods.Blessing == "" {
-		goods.Blessing = services.DefaultBlessing
+		goods.Blessing = envelopeServices.DefaultBlessing
 	}
-	if goods.EnvelopeType == services.GeneralEnvelopeType {
+	if goods.EnvelopeType == envelopeServices.GeneralEnvelopeType {
 		goods.AmountOne = goods.Amount
 		goods.Amount = decimal.Decimal{}
 	}
@@ -52,7 +53,7 @@ func (r *redEnvelopeService) SendOut(dto services.RedEnvelopeSendingDTO) (activi
 	return activity, err
 }
 
-func (r *redEnvelopeService) Receive(dto services.RedEnvelopeReceiveDTO) (item *services.RedEnvelopeItemDTO, err error) {
+func (r *redEnvelopeService) Receive(dto envelopeServices.RedEnvelopeReceiveDTO) (item *envelopeServices.RedEnvelopeItemDTO, err error) {
 	if err = base.ValidateStruct(&dto); err != nil {
 		return nil, err
 	}
@@ -68,11 +69,11 @@ func (r *redEnvelopeService) Receive(dto services.RedEnvelopeReceiveDTO) (item *
 	return item, err
 }
 
-func (r *redEnvelopeService) Refund(envelopeNo string) (order *services.RedEnvelopeGoodsDTO) {
+func (r *redEnvelopeService) Refund(envelopeNo string) (order *envelopeServices.RedEnvelopeGoodsDTO) {
 	panic("implement me")
 }
 
-func (r *redEnvelopeService) Get(envelopeNo string) (order *services.RedEnvelopeGoodsDTO) {
+func (r *redEnvelopeService) Get(envelopeNo string) (order *envelopeServices.RedEnvelopeGoodsDTO) {
 	domain := goodsDomain{}
 	po := domain.GetOne(envelopeNo)
 	if po == nil {
@@ -82,10 +83,10 @@ func (r *redEnvelopeService) Get(envelopeNo string) (order *services.RedEnvelope
 }
 
 
-func (r *redEnvelopeService) ListSent(userId string, page, size int) (orders []*services.RedEnvelopeGoodsDTO) {
+func (r *redEnvelopeService) ListSent(userId string, page, size int) (orders []*envelopeServices.RedEnvelopeGoodsDTO) {
 	domain := new(goodsDomain)
 	pos := domain.FindByUser(userId, page, size)
-	orders = make([]*services.RedEnvelopeGoodsDTO, 0, len(pos))
+	orders = make([]*envelopeServices.RedEnvelopeGoodsDTO, 0, len(pos))
 	for _, p := range pos {
 		orders = append(orders, p.ToDTO())
 	}
@@ -93,11 +94,11 @@ func (r *redEnvelopeService) ListSent(userId string, page, size int) (orders []*
 	return
 }
 
-func (r *redEnvelopeService) ListReceivable(page, size int) (orders []*services.RedEnvelopeGoodsDTO) {
+func (r *redEnvelopeService) ListReceivable(page, size int) (orders []*envelopeServices.RedEnvelopeGoodsDTO) {
 	domain := new(goodsDomain)
 
 	pos := domain.ListReceivable(page, size)
-	orders = make([]*services.RedEnvelopeGoodsDTO, 0, len(pos))
+	orders = make([]*envelopeServices.RedEnvelopeGoodsDTO, 0, len(pos))
 	for _, p := range pos {
 		if p.RemainQuantity > 0 {
 			orders = append(orders, p.ToDTO())
@@ -106,17 +107,17 @@ func (r *redEnvelopeService) ListReceivable(page, size int) (orders []*services.
 	return
 }
 
-func (r *redEnvelopeService) ListReceived(userId string, page, size int) (items []*services.RedEnvelopeItemDTO) {
+func (r *redEnvelopeService) ListReceived(userId string, page, size int) (items []*envelopeServices.RedEnvelopeItemDTO) {
 	domain := new(goodsDomain)
 	pos := domain.ListReceived(userId, page, size)
-	items = make([]*services.RedEnvelopeItemDTO, 0, len(pos))
+	items = make([]*envelopeServices.RedEnvelopeItemDTO, 0, len(pos))
 	for _, p := range pos {
 		items = append(items, p.ToDTO())
 	}
 	return
 }
 
-func (r *redEnvelopeService) ListItems(envelopeNo string) (items []*services.RedEnvelopeItemDTO) {
+func (r *redEnvelopeService) ListItems(envelopeNo string) (items []*envelopeServices.RedEnvelopeItemDTO) {
 	domain := itemDomain{}
 	return domain.FindItems(envelopeNo)
 }

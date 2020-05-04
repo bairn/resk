@@ -4,18 +4,19 @@ import (
 	"context"
 	"database/sql"
 	"errors"
+	"github.com/bairn/account/core/accounts"
+	"github.com/bairn/account/services"
+	"github.com/bairn/infra/algo"
+	"github.com/bairn/infra/base"
 	"github.com/shopspring/decimal"
 	log "github.com/sirupsen/logrus"
 	"github.com/tietang/dbx"
-	"resk/core/accounts"
-	"github.com/bairn/infra/algo"
-	"github.com/bairn/infra/base"
-	"resk/services"
+	envelopeServices "resk/services"
 )
 
 var multiple = decimal.NewFromFloat(100.0)
 
-func (d *goodsDomain) Receive(ctx context.Context, dto services.RedEnvelopeReceiveDTO) (item *services.RedEnvelopeItemDTO, err error) {
+func (d *goodsDomain) Receive(ctx context.Context, dto envelopeServices.RedEnvelopeReceiveDTO) (item *envelopeServices.RedEnvelopeItemDTO, err error) {
 	d.preCreateItem(dto)
 	goods := d.Get(dto.EnvelopeNo)
 	if goods.RemainQuantity <= 0 || goods.RemainAmount.Cmp(decimal.NewFromFloat(0)) <=0 {
@@ -33,7 +34,7 @@ func (d *goodsDomain) Receive(ctx context.Context, dto services.RedEnvelopeRecei
 		}
 
 		d.item.Quantity = 1
-		d.item.PayStatus = int(services.Paying)
+		d.item.PayStatus = int(envelopeServices.Paying)
 		d.item.AccountNo = dto.AccountNo
 		d.item.RemainAmount = goods.RemainAmount.Sub(nextAmount)
 		d.item.Amount = nextAmount
@@ -54,7 +55,7 @@ func (d *goodsDomain) Receive(ctx context.Context, dto services.RedEnvelopeRecei
 	return d.item.ToDTO(), err
 }
 
-func (d *goodsDomain) transfer(ctx context.Context, dto services.RedEnvelopeReceiveDTO) (status services.TransferedStatus, err error) {
+func (d *goodsDomain) transfer(ctx context.Context, dto envelopeServices.RedEnvelopeReceiveDTO) (status services.TransferedStatus, err error) {
 	systemAmount := base.GetSystemAccount()
 	body := services.TradeParticipator{
 		AccountNo: systemAmount.AccountNo,
@@ -80,7 +81,7 @@ func (d *goodsDomain) transfer(ctx context.Context, dto services.RedEnvelopeRece
 	return adomain.TransferWithContextTx(ctx, transfer)
 }
 
-func (d *goodsDomain) preCreateItem(dto services.RedEnvelopeReceiveDTO) {
+func (d *goodsDomain) preCreateItem(dto envelopeServices.RedEnvelopeReceiveDTO) {
 	d.item.AccountNo = dto.AccountNo
 	d.item.EnvelopeNo = dto.EnvelopeNo
 	d.item.RecvUsername = sql.NullString{String: dto.RecvUsername, Valid: true}
@@ -93,9 +94,9 @@ func (d *goodsDomain) nextAmount(goods *RedEnvelopeGoods) (amount decimal.Decima
 		return goods.RemainAmount
 	}
 
-	if goods.EnvelopeType == services.GeneralEnvelopeType {
+	if goods.EnvelopeType == envelopeServices.GeneralEnvelopeType {
 		return goods.AmountOne
-	} else if goods.EnvelopeType == services.LuckyEnvelopeType {
+	} else if goods.EnvelopeType == envelopeServices.LuckyEnvelopeType {
 		cent := goods.RemainAmount.Mul(multiple).IntPart()
 		next := algo.DoubleAverage(int64(goods.RemainQuantity), cent)
 		amount = decimal.NewFromFloat(float64(next)).Div(multiple)

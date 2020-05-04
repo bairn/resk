@@ -4,10 +4,11 @@ import (
 	"context"
 	"errors"
 	"fmt"
+	"github.com/bairn/account/services"
+	"github.com/bairn/infra/base"
 	log "github.com/sirupsen/logrus"
 	"github.com/tietang/dbx"
-	"github.com/bairn/infra/base"
-	"resk/services"
+	envelopeServices "resk/services"
 )
 
 const (
@@ -51,11 +52,11 @@ func (e *ExpiredEnvelopeDomain) Expired() (err error) {
 func (e *ExpiredEnvelopeDomain) ExpiredOne(goods RedEnvelopeGoods) (err error) {
 	//创建一个退款订单
 	refund := goods
-	refund.OrderType = services.OrderTypeRefund
+	refund.OrderType = envelopeServices.OrderTypeRefund
 	//refund.RemainAmount = goods.RemainAmount.Mul(decimal.NewFromFloat(-1))
 	//refund.RemainQuantity = -goods.RemainQuantity
-	refund.Status = services.OrderExpired
-	refund.PayStatus = services.Refunding
+	refund.Status = envelopeServices.OrderExpired
+	refund.PayStatus = envelopeServices.Refunding
 	refund.OriginEnvelopeNo = goods.EnvelopeNo
 	refund.EnvelopeNo = ""
 	domain := goodsDomain{RedEnvelopeGoods: refund}
@@ -69,7 +70,7 @@ func (e *ExpiredEnvelopeDomain) ExpiredOne(goods RedEnvelopeGoods) (err error) {
 		}
 		//修改原订单订单状态
 		dao := RedEnvelopeGoodsDao{runner: runner}
-		_, err = dao.UpdateOrderStatus(goods.EnvelopeNo, services.OrderExpired)
+		_, err = dao.UpdateOrderStatus(goods.EnvelopeNo, envelopeServices.OrderExpired)
 		if err != nil {
 			return errors.New("更新原订单状态失败" + err.Error())
 		}
@@ -114,12 +115,12 @@ func (e *ExpiredEnvelopeDomain) ExpiredOne(goods RedEnvelopeGoods) (err error) {
 	err = base.Tx(func(runner *dbx.TxRunner) error {
 		dao := RedEnvelopeGoodsDao{runner: runner}
 		//修改原订单状态
-		rows, err := dao.UpdateOrderStatus(goods.EnvelopeNo, services.OrderExpiredRefundSuccessful)
+		rows, err := dao.UpdateOrderStatus(goods.EnvelopeNo, envelopeServices.OrderExpiredRefundSuccessful)
 		if err != nil || rows == 0 {
 			return errors.New("更新原订单状态失败")
 		}
 		//修改退款订单状态
-		rows, err = dao.UpdateOrderStatus(refund.EnvelopeNo, services.OrderExpiredRefundSuccessful)
+		rows, err = dao.UpdateOrderStatus(refund.EnvelopeNo, envelopeServices.OrderExpiredRefundSuccessful)
 		if err != nil || rows == 0 {
 			return errors.New("更新退款订单状态失败")
 		}

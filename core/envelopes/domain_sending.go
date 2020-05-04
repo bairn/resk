@@ -2,20 +2,21 @@ package envelopes
 
 import (
 	"context"
+	"github.com/bairn/account/core/accounts"
+	"github.com/bairn/account/services"
+	"github.com/bairn/infra/base"
 	"github.com/tietang/dbx"
 	"path"
-	"resk/core/accounts"
-	"github.com/bairn/infra/base"
-	"resk/services"
+	envelopeServices "resk/services"
 )
 
 //发红包业务领域代码
 func (d *goodsDomain) SendOut(
-	goods services.RedEnvelopeGoodsDTO) (activity *services.RedEnvelopeActivity, err error) {
+	goods envelopeServices.RedEnvelopeGoodsDTO) (activity *envelopeServices.RedEnvelopeActivity, err error) {
 	//创建红包商品
 	d.Create(goods)
 	//创建活动
-	activity = new(services.RedEnvelopeActivity)
+	activity = new(envelopeServices.RedEnvelopeActivity)
 	//红包链接，格式：http://域名/v1/envelope/{id}/link/
 	link := base.GetEnvelopeActivityLink()
 	domain := base.GetEnvelopeDomain()
