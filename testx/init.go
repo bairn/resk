@@ -1,8 +1,8 @@
 package testx
 
 import (
-	"github.com/tietang/props/ini"
-	"github.com/tietang/props/kvs"
+	"github.com/bairn/props/ini"
+	"github.com/bairn/props/kvs"
 	"github.com/bairn/infra"
 	"github.com/bairn/infra/base"
 )

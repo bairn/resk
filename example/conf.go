@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/tietang/props/ini"
-	"github.com/tietang/props/kvs"
+	"github.com/bairn/props/ini"
+	"github.com/bairn/props/kvs"
 )
 
 func main() {

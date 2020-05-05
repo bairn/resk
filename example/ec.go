@@ -11,7 +11,7 @@ func main() {
 	}
 
 	client := eureka.NewClientByConfig([]string{
-		"http://127.0.0.1:8761/eureka",
+		"http://eureka.springcloud.cn/eureka",
 	}, cfg)
 
 	appName := "Go-Example"
