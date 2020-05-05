@@ -4,11 +4,19 @@ import (
 	"github.com/bairn/infra"
 	"github.com/bairn/infra/base"
 	_ "github.com/bairn/resk"
+	log "github.com/sirupsen/logrus"
 	"github.com/tietang/props/ini"
 	"github.com/tietang/props/kvs"
+	"net/http"
+	_ "net/http/pprof"
 )
 
 func main() {
+	go func() {
+		log.Info(http.ListenAndServe(":6060", nil))
+	}()
+
+
 	file := kvs.GetCurrentFilePath("config.ini", 1)
 	conf := ini.NewIniFileCompositeConfigSource(file)
 	base.InitLog(conf)

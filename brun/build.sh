@@ -21,7 +21,10 @@ build(){
     if [ ${GOOS} == "windows" ];then
         zip ${tname}.zip ${TARGET_FILE_NAME}${EXT} config.ini ../public/
     else
-        tar --exclude=*.gz  --exclude=*.zip  --exclude=*.git -czvf ${tname}.tar.gz ${TARGET_FILE_NAME}${EXT} config.ini *.sh ../public/ -C ./ .
+        tar --exclude=*.gz  --exclude=*.zip  --exclude=*.git -czvf ${tname}.tar.gz ${TARGET_FILE_NAME}${EXT} config.ini boot.ini *.sh
+        cp install.sh ${tname}.run
+        cat ${tname}.tar.gz >> ${tname}.run
+        chmod +x ${tname}.run
     fi
     mv ${TARGET_FILE_NAME}${EXT} ${tname}
 
